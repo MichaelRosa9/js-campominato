@@ -24,9 +24,10 @@ var arr_player = [];
 
 var input_player = false;
 //condizioni ciclo del gioco
+var counter = 0;
 while(input_player == false){
-  var player_num = parseInt(prompt('Inserisci un numero da 1 a 100'))
-
+  var player_num = parseInt(prompt('Inserisci un numero da 1 a 100'));
+  counter++;
   if(arr_player.includes(player_num)){//se il numero é già stato inserito
     alert("Attenzione!\n Il numero appena messo é gia stato inserito. Inserisci un altro numero diverso da");
     input_player == false;
@@ -39,16 +40,15 @@ while(input_player == false){
   }else if(arr_npc.includes(player_num)){//se il numero inserito corrisponde a un numero del computer
     alert("Hai beccato una mina! Hai perso.");
     input_player = true;
-  }
-  //numero non puo essere insereti se e' gia stato messo
+  }//se si ha messo il numero massimo di numeri da poter inserire nel limite
+
   
   arr_player.push(player_num);
-  //esito partita terminata se
 
-  //se si ha messo il numero massimo di numeri da poter inserire nel limite
 }
 
 
 console.log(arr_npc);
 console.log(arr_player);
+console.log("Hai fatto " + counter + " tentativi.");
 //una volta terminata la partita usare un alert indicanto tentativi eseguiti e numero che ha fatto perdere il giocatore
